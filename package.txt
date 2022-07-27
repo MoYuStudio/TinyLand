@@ -1,0 +1,21 @@
+
+# === MoYuStudio ===
+# |    TinyLand    |
+# ==================
+
+# Python 3.8.10
+# pip3 install -r package.txt
+# pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r package.txt
+
+# Basis Universal
+pygame == 2.1.2
+
+# Core / Math
+noise == 1.2.2
+
+# Drivers
+pyyaml == 6.0
+
+
+
+

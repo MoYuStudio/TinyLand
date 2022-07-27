@@ -3,3 +3,4 @@
 glob_filename: assets/tile/*.png
 assets_original: assets/tile/
 mask_original: assets/mask/landtile_mask.png
+tile_data: data/tile.yml

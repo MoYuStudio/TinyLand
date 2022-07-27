@@ -1,5 +1,4 @@
 
-from distutils.command.config import config
 import pygame
 
 import scene
@@ -15,6 +14,7 @@ class Game:
     def renderer(self):
         surface = pygame.Surface((self.window_size[0],self.window_size[1])).convert_alpha()
         surface.fill((0,0,0,0))
+        
         surface.blit(pygame.image.load('assets/icon/icon.png'), (0,0))
         
         return surface

@@ -18,7 +18,6 @@ pygame.font.init()
 yaml = drivers.yaml.yaml_driver.YamlDriver()
 
 config = yaml.read(read_file='data/config.yml')
-print(config)
 
 window = pygame.display.set_mode(config['window_size']) # pygame.RESIZABLE
 window_title = pygame.display.set_caption(config['window_title'])
@@ -27,7 +26,7 @@ window_clock = pygame.time.Clock()
 
 is_scene = 'game'
 scene_list = {
-    'game':scene.game.Game(),
+                'game':scene.game.Game(),
             }
 
 RUN = True
@@ -41,4 +40,4 @@ while RUN == True:
     window.blit(scene_list[is_scene].renderer(), (0,0))
     
     pygame.display.update()
-    window_clock.tick(60)
+    window_clock.tick(config['window_fps'])

@@ -12,11 +12,11 @@ class Game:
         yaml_file = drivers.yaml.yaml_driver.YamlDriver()
         self.config = yaml_file.read(read_file='data/scene/game.yml')
         
-        json_file = drivers.json.json_driver.JsonDriver()
-        self.map = json_file.read(read_file='data/map')
+        json_file = drivers.json.json_driver.JsonDriver(path='data/map')
+        self.map = json_file.read()
         
         self.size = 4
-        self.tilemap_obj = engine.tilemap.Tilemap(self.map['map'],self.size)
+        self.tilemap_obj = engine.tilemap.Tilemap(self.map['1'],self.size)
         
     
     def renderer(self):

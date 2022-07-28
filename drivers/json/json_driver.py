@@ -27,8 +27,6 @@ class JsonDriver:
         self.read_data = read_data
         self.write_path = {}
 
-        self.read()
-
     def read(self):
         '''
             遍历路径 读取json数据 并存入字典

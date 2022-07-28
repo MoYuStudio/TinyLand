@@ -8,8 +8,6 @@ class Tilemap:
         
         self.tile_list = {}
         
-        print(map)
-        
         for y in self.map:
             for x in range(len(self.map[y])):
                 for z in range(len(self.map[y][x])):

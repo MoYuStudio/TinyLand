@@ -15,7 +15,7 @@ class Tile:
         
         yaml = drivers.yaml.yaml_driver.YamlDriver()
         self.config = yaml.read(read_file='data/engine/tile.yml')
-        self.tile_data = yaml.read(read_file=self.config['data/tile.yml'])
+        self.tile_data = yaml.read(read_file=self.config['tile_data'])
         
         num = []
         for filename in glob.glob(self.config['glob_filename']):

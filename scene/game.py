@@ -23,8 +23,6 @@ class Game:
         surface = pygame.Surface((self.window_size[0],self.window_size[1])).convert_alpha()
         surface.fill((0,0,0,0))
         
-        surface.blit(pygame.image.load('assets/icon/icon.png'), (0,0))
-        
         self.tilemap_obj.renderer(surface)
         
         return surface

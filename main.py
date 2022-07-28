@@ -15,9 +15,8 @@ pygame.init()
 pygame.display.init()
 pygame.font.init()
 
-yaml = drivers.yaml.yaml_driver.YamlDriver()
-
-config = yaml.read(read_file='data/config.yml')
+yaml_file = drivers.yaml.yaml_driver.YamlDriver()
+config = yaml_file.read(read_file='data/config.yml')
 
 window = pygame.display.set_mode(config['window_size']) # pygame.RESIZABLE
 window_title = pygame.display.set_caption(config['window_title'])

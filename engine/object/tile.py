@@ -22,9 +22,9 @@ class Tile:
             self.tile_data = yaml.read(read_file=self.config['tile_data'])
         except:
             print('Engine/Object:Tile (tile_data) Missing')
+            pass
         
     def renderer(self,surface):
-        
         try:
             self.assets_original = pygame.image.load(self.config['assets_original']+str(self.render_id)+'.png')
             self.assets = pygame.transform.scale(self.assets_original,(16*self.size, 16*self.size))
@@ -62,8 +62,11 @@ class Tile:
             
             surface.blit(self.assets, self.rect)
             
+            return self.rect
+            
         except:
-            print('Engine/Object:Tile [renderer] Erro')
+            pass
+            # print('Engine/Object:Tile [renderer] Erro')
         
     def touch(self,change_tile):
         if self.pos['y'] == '1':

@@ -34,17 +34,17 @@ class YamlDriver:
                     
         return read_data
     
-    # def read(self,read_file='data.yml',read_data={}):
-    #     '''
-    #         读取 yml & yaml 数据 并存入字典 返回
-    #     '''
-    #     with open(read_file) as f: # with 打开文件
-    #         docs = yaml.load_all(f, Loader=yaml.FullLoader) # 加载 yaml 数据
-    #         for doc in docs: # 遍历 yaml 数据
-    #             for key, value in doc.items(): # 遍历 yaml 数据中的 key & value
-    #                 read_data[key] = value # 将 key & value 存入字典
+    def read_global(self,read_file='data.yml',read_data={}):
+        '''
+            读取 yml & yaml 数据 并存入字典 返回
+        '''
+        with open(read_file) as f: # with 打开文件
+            docs = yaml.load_all(f, Loader=yaml.FullLoader) # 加载 yaml 数据
+            for doc in docs: # 遍历 yaml 数据
+                for key, value in doc.items(): # 遍历 yaml 数据中的 key & value
+                    read_data[key] = value # 将 key & value 存入字典
                     
-    #     return read_data
+        return read_data
     
     def read_all(self,read_path='yml',read_data={}):
         '''

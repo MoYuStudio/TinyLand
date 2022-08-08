@@ -62,7 +62,12 @@ class Tile:
             
             surface.blit(self.assets, self.rect)
             
-            return self.rect
+            if self.motioning == True:
+                self.perchoose_original = pygame.image.load(self.config['perchoose_original']).convert_alpha()
+                self.perchoose = pygame.transform.scale(self.perchoose_original,((self.width,self.width)))
+                self.perchoose_rect = self.rect.copy()
+                self.perchoose_rect.y = self.perchoose_rect.y + self.perchoose_rect.height/2
+                surface.blit(self.perchoose, self.perchoose_rect)
             
         except:
             pass
@@ -82,3 +87,18 @@ class Tile:
                 if touching == True:
                     if self.id == 0:
                         self.id = change_tile
+                        
+    def motion(self):
+        if self.pos['y'] == '1':
+            touch_rect = self.rect.copy()
+            touch_rect.y = touch_rect.y + touch_rect.height/2
+            
+            pos = pygame.mouse.get_pos()
+            tile_mask = pygame.mask.from_surface(self.mask)
+            pos_in_mask = (pos[0]-touch_rect.x),(pos[1]-touch_rect.y)
+            touching = touch_rect.collidepoint(*pos) and tile_mask.get_at(pos_in_mask)
+            
+            if touching == True:
+                self.motioning = True
+            else:
+                self.motioning = False

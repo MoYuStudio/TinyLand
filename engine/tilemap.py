@@ -25,3 +25,8 @@ class Tilemap:
         for tile in self.tile_list:
             self.tile_list[tile].offset = pos_offset
             self.tile_list[tile].touch(change_tile)
+            
+    def motion(self,pos_offset=[0,0]):
+        for tile in self.tile_list:
+            self.tile_list[tile].offset = pos_offset
+            self.tile_list[tile].motion()

@@ -47,8 +47,11 @@ class Game:
     
     def scene_event(self,event):
         self.event = event
+        
+        if self.event.type == pygame.MOUSEMOTION:
+            self.tilemap_obj.motion(pos_offset=self.tilemap_offset)
+        
         if self.event.type == pygame.MOUSEBUTTONDOWN:
-                
             self.tilemap_obj.touch(self.tile_pick, pos_offset=self.tilemap_offset)
         
         if self.event.type == pygame.KEYDOWN:

@@ -3,5 +3,6 @@
 glob_filename: assets/tile/*.png
 assets_original: assets/tile/
 mask_original: assets/mask/landtile_mask.png
+perchoose_original: assets/mask/landtile_perchoose_mask.png
 tile_data: data/tile/data.yml
 tile_animation: data/tile/animation.yml

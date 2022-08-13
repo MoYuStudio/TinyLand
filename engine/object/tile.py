@@ -90,15 +90,18 @@ class Tile:
                         
     def motion(self):
         if self.pos['y'] == '1':
-            touch_rect = self.rect.copy()
-            touch_rect.y = touch_rect.y + touch_rect.height/2
-            
-            pos = pygame.mouse.get_pos()
-            tile_mask = pygame.mask.from_surface(self.mask)
-            pos_in_mask = (pos[0]-touch_rect.x),(pos[1]-touch_rect.y)
-            touching = touch_rect.collidepoint(*pos) and tile_mask.get_at(pos_in_mask)
-            
-            if touching == True:
-                self.motioning = True
-            else:
-                self.motioning = False
+            try:
+                touch_rect = self.rect.copy()
+                touch_rect.y = touch_rect.y + touch_rect.height/2
+                
+                pos = pygame.mouse.get_pos()
+                tile_mask = pygame.mask.from_surface(self.mask)
+                pos_in_mask = (pos[0]-touch_rect.x),(pos[1]-touch_rect.y)
+                touching = touch_rect.collidepoint(*pos) and tile_mask.get_at(pos_in_mask)
+                
+                if touching == True:
+                    self.motioning = True
+                else:
+                    self.motioning = False
+            except:
+                pass
